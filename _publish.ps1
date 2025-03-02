@@ -23,6 +23,6 @@ Write-Host "Pushing the current branch..." -ForegroundColor Magenta;
 git --git-dir=$gitDir --work-tree=$solutionDir push;
 
 # psuh to build
-Write-Host "Pushing to main branch..." -ForegroundColor Magenta;
 $branch = $IsRelease -eq "1" ? "main" : "prerelease";
-git --git-dir=$gitDir push origin dev:$branch
+Write-Host "Pushing to $branch branch..." -ForegroundColor Magenta;
+git --git-dir=$gitDir --work-tree=$solutionDir push origin dev:$branch
