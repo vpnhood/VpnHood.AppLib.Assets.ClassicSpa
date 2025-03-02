@@ -45,9 +45,9 @@ Function UpdateProjectVersion([string] $projectFile)
 	$fileVersion = $xml.SelectSingleNode("Project/PropertyGroup/FileVersion");
 	$packageVersion = $xml.SelectSingleNode("Project/PropertyGroup/Version");
 
-	if ($packageVersion -and $packageVersion.InnerText -ne $versionParam){
+	if ($packageVersion -and $packageVersion.InnerText -ne $versionTag){
 		$fileVersion.InnerText = '$([System.DateTime]::Now.ToString("yyyy.M.d.HHmm"))';
-		$packageVersion.InnerText = $versionParam;
+		$packageVersion.InnerText = $versionTag;
 
 		# Update Android Version
 		$applicationVersion = $xml.SelectSingleNode("Project/PropertyGroup/ApplicationVersion");
@@ -55,7 +55,7 @@ Function UpdateProjectVersion([string] $projectFile)
 		if ($applicationVersion)
 		{
 			$applicationVersion.InnerText = $version.Build;
-			$applicationDisplayVersion.InnerText = $versionParam;
+			$applicationDisplayVersion.InnerText = $versionTag;
 		}
 
 		# Update project file
