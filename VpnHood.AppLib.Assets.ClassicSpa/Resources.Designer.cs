@@ -63,6 +63,16 @@ namespace VpnHood.AppLib.Assets.ClassicSpa {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] SPA {
+            get {
+                object obj = ResourceManager.GetObject("SPA", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] VpnConnectedIcon {
             get {
                 object obj = ResourceManager.GetObject("VpnConnectedIcon", resourceCulture);
