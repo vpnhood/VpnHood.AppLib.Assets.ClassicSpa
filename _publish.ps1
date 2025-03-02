@@ -9,7 +9,7 @@ git --git-dir=$gitDir --work-tree=$solutionDir pull;
 . "$PSScriptRoot/pub/VersionBump.ps1" -versionFile "$PSScriptRoot/pub/PubVersion.json" -bump 1;
 
 # push the new version
-git --git-dir=$gitDir --work-tree=$solutionDir push;
+#git --git-dir=$gitDir --work-tree=$solutionDir push;
 
 # swtich to main branch 681
-git --git-dir=$gitDir push origin dev:main
+#git --git-dir=$gitDir push origin dev:main
