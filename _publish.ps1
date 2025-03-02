@@ -7,18 +7,21 @@ $bump = $IsRelease -eq "1" ? 1 : 2;
 $solutionDir = $PSScriptRoot;
 $projectFile = "$solutionDir/VpnHood.AppLib.Assets.ClassicSpa/VpnHood.AppLib.Assets.ClassicSpa.csproj";
 
-# get the latest version
-Write-Host "Commit and get pull the lastest" -ForegroundColor Magenta;
-$gitDir = "$solutionDir/.git";
-git --git-dir=$gitDir --work-tree=$solutionDir commit -a -m "Publish";
+# pulling
+Write-Host "pulling..." -ForegroundColor Magenta;
 git --git-dir=$gitDir --work-tree=$solutionDir pull;
 
 # bump version
-Write-Host "Increasing version" -ForegroundColor Magenta;
+Write-Host "Increasing version..." -ForegroundColor Magenta;
 . "$PSScriptRoot/pub/VersionBump.ps1" -versionFile "$PSScriptRoot/pub/PubVersion.json" -bump $bump;
 UpdateProjectVersion($projectFile);
 
-# push the new version
+# commit
+Write-Host "Commiting current branch..." -ForegroundColor Magenta;
+$gitDir = "$solutionDir/.git";
+git --git-dir=$gitDir --work-tree=$solutionDir commit -a -m "Publish";
+
+# push to current branch
 Write-Host "Pushing the current branch..." -ForegroundColor Magenta;
 git --git-dir=$gitDir --work-tree=$solutionDir push;
 
