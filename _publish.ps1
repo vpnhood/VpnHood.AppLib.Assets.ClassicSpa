@@ -1,4 +1,5 @@
 ﻿$solutionDir = $PSScriptRoot;
+$projectFile = "VpnHood.AppLib.Assets.ClassicSpa/VpnHood.AppLib.Assets.ClassicSpa.cproj";
 
 # get the latest version
 $gitDir = "$solutionDir/.git";
@@ -7,7 +8,8 @@ git --git-dir=$gitDir --work-tree=$solutionDir pull;
 
 # bump version
 . "$PSScriptRoot/pub/VersionBump.ps1" -versionFile "$PSScriptRoot/pub/PubVersion.json" -bump 1;
-
+# update project version
+UpdateProjectVersion($projectFile);
 # push the new version
 #git --git-dir=$gitDir --work-tree=$solutionDir push;
 
