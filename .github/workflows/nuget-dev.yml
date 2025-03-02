@@ -18,14 +18,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Bump versions
-      uses: SiqiLu/dotnet-bump-version@2.0.0
-      with:
-        version_files: "**/*.csproj"
-        version_mask: 0.0.1.0
-        version_overwrite: "*.*.*.0-preview"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-   
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
