@@ -2,9 +2,9 @@ name: Publish Nugets
 
 on:
   push:
-    branches: [ "development2" ]
+    branches: [ "development" ]
   pull_request:
-    branches: [ "development2" ]
+    branches: [ "development" ]
 
 jobs:
   build:
