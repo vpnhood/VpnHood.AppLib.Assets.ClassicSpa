@@ -22,4 +22,6 @@ git --git-dir=$gitDir --work-tree=$solutionDir push;
 
 # swtich to main branch
 $branch = $IsRelease -eq "1" ? "main" : "prerelease";
+echo $branch
+exit 
 git --git-dir=$gitDir push origin dev:$branch

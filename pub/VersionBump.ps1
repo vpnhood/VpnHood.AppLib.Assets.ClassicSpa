@@ -21,7 +21,8 @@ if ( $bump -gt 0 )
 $prerelease = $versionJson.Prerelease;
 $isLatest = $versionJson.Prerelease -eq $false; 
 $versionParam = $version.ToString(3);
-$versionTag = "v$versionParam" + (&{if($prerelease) {"-prerelease"} else {""}});
+$versionName = "$versionParam" + (&{if($prerelease) {"-prerelease"} else {""}});
+$versionTag = "v$versionParam";
 $releaseDate = Get-Date -asUTC -Format "s";
 $deprecatedVersion = $versionJson.DeprecatedVersion;
 
