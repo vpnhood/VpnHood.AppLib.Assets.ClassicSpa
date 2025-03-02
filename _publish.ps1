@@ -1,4 +1,7 @@
-﻿$solutionDir = $PSScriptRoot;
+﻿param([int]$IsRelease)
+$bump = $IsRelease -eq "1" ? 1 : 2;
+
+$solutionDir = $PSScriptRoot;
 $projectFile = "$solutionDir/VpnHood.AppLib.Assets.ClassicSpa/VpnHood.AppLib.Assets.ClassicSpa.csproj";
 
 # get the latest version
@@ -7,7 +10,7 @@ git --git-dir=$gitDir --work-tree=$solutionDir commit -a -m "Publish";
 git --git-dir=$gitDir --work-tree=$solutionDir pull;
 
 # bump version
-. "$PSScriptRoot/pub/VersionBump.ps1" -versionFile "$PSScriptRoot/pub/PubVersion.json" -bump 2;
+. "$PSScriptRoot/pub/VersionBump.ps1" -versionFile "$PSScriptRoot/pub/PubVersion.json" -bump $bump;
 # update project version
 UpdateProjectVersion($projectFile);
 
