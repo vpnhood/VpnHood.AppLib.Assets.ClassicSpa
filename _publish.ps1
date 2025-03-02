@@ -1,4 +1,5 @@
-﻿param([int]$IsRelease)
+﻿param([bool]$IsRelease)
+
 $bump = $IsRelease -eq "1" ? 1 : 2;
 
 $solutionDir = $PSScriptRoot;
