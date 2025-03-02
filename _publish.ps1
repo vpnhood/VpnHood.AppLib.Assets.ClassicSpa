@@ -6,4 +6,4 @@ git --git-dir=$gitDir --work-tree=$solutionDir pull;
 git --git-dir=$gitDir --work-tree=$solutionDir push;
 
 # swtich to main branch 
-git --git-dir=$gitDir push origin dev:main -force
+git --git-dir=$gitDir push origin dev:main --force
