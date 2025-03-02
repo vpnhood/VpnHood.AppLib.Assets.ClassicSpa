@@ -18,7 +18,8 @@ git --git-dir=$gitDir --work-tree=$solutionDir pull;
 UpdateProjectVersion($projectFile);
 
 # push the new version
-#git --git-dir=$gitDir --work-tree=$solutionDir push;
+git --git-dir=$gitDir --work-tree=$solutionDir push;
 
 # swtich to main branch
-#git --git-dir=$gitDir push origin dev:main
+$branch = $IsRelease -eq "1" ? "main" : "prerelease";
+git --git-dir=$gitDir push origin dev:$branch
