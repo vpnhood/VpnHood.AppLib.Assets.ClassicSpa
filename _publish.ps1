@@ -1,4 +1,6 @@
-﻿param([bool]$IsRelease)
+﻿param(
+	[Parameter(Mandatory=$true)][object]$IsRelease
+)
 
 $bump = $IsRelease -eq "1" ? 1 : 2;
 
