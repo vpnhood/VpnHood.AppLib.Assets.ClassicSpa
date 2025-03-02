@@ -63,9 +63,9 @@ namespace VpnHood.AppLib.Assets.ClassicSpa {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] spa {
+        internal static byte[] Spa {
             get {
-                object obj = ResourceManager.GetObject("spa", resourceCulture);
+                object obj = ResourceManager.GetObject("Spa", resourceCulture);
                 return ((byte[])(obj));
             }
         }
