@@ -1,5 +1,5 @@
 ﻿$solutionDir = $PSScriptRoot;
-$projectFile = "$solutionDir/VpnHood.AppLib.Assets.ClassicSpa/VpnHood.AppLib.Assets.ClassicSpa.cproj";
+$projectFile = "$solutionDir/VpnHood.AppLib.Assets.ClassicSpa/VpnHood.AppLib.Assets.ClassicSpa.csproj";
 
 # get the latest version
 $gitDir = "$solutionDir/.git";
