@@ -128,6 +128,6 @@
     <value>Resources\Icons\VpnDisconnected.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SPA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-	  <value>resources\SPA.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	  <value>resources\SPA2.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
