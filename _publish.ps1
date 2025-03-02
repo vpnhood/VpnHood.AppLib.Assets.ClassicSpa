@@ -5,7 +5,6 @@
 $bump = $IsRelease -eq "1" ? 1 : 2;
 
 $solutionDir = $PSScriptRoot;
-$projectFile = "$solutionDir/VpnHood.AppLib.Assets.ClassicSpa/VpnHood.AppLib.Assets.ClassicSpa.csproj";
 
 # pulling
 Write-Host "pulling..." -ForegroundColor Magenta;
@@ -14,7 +13,7 @@ git --git-dir=$gitDir --work-tree=$solutionDir pull;
 # bump version
 Write-Host "Increasing version..." -ForegroundColor Magenta;
 . "$PSScriptRoot/pub/VersionBump.ps1" -versionFile "$PSScriptRoot/pub/PubVersion.json" -bump $bump;
-UpdateProjectVersion($projectFile);
+UpdateSolutionVersion($solutionDir);
 
 # commit
 Write-Host "Commiting current branch..." -ForegroundColor Magenta;

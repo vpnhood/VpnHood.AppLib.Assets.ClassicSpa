@@ -40,6 +40,8 @@ Function ReportVersion()
 # UpdateProjectVersion
 Function UpdateProjectVersion([string] $projectFile) 
 {
+    Write-Host "Bumping project version: $(Split-Path $projectFile -Leaf)";
+
 	$xml = New-Object XML;
 	$xml.PreserveWhitespace = $true;
 	$xml.Load($projectFile);
@@ -62,6 +64,13 @@ Function UpdateProjectVersion([string] $projectFile)
 		# Update project file
 		$xml.Save($projectFile);
 	}
+}
+
+function UpdateSolutionVersion([string] $solutionDir) {
+    # Find all .csproj files recursively and update their versions
+    Get-ChildItem -Path $solutionDir -Recurse -Filter "*.csproj" | ForEach-Object {
+        UpdateProjectVersion $_.FullName
+    }
 }
 
 Function Copy-ZipAndUnzipRemote {
