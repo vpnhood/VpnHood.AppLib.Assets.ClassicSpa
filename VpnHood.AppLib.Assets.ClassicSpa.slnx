@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/GitHub/">
+    <File Path=".github/workflows/nuget-main.yml" />
+    <File Path=".github/workflows/nuget-prerelease.yml" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="pub/PubVersion.json" />
+    <File Path="_publish.ps1" />
+  </Folder>
+  <Project Path="VpnHood.AppLib.Assets.ClassicSpa/VpnHood.AppLib.Assets.ClassicSpa.csproj" />
+</Solution>
