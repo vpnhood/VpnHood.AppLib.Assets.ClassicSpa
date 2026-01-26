@@ -27,4 +27,4 @@ git --git-dir=$gitDir --work-tree=$solutionDir push;
 # psuh to build
 $branch = $IsRelease -eq "1" ? "main" : "prerelease";
 Write-Host "Pushing to $branch branch..." -ForegroundColor Magenta;
-git --git-dir=$gitDir --work-tree=$solutionDir push origin dev:$branch --force
+#git --git-dir=$gitDir --work-tree=$solutionDir push origin dev:$branch --force
